@@ -1,0 +1,19 @@
+.quiz_div
+{
+	/* height: auto; */ 
+	width: auto; 
+	height: 230px;
+}
+.textbox, .google_left
+{
+	/* 5-11-2017 - Removed .google_top because using responsive top ad */
+	display: none;
+}
+.google_mobile
+{
+	display: block;
+}
+h1
+{
+	font-size: 1em;
+}

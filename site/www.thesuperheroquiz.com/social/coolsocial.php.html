@@ -1,0 +1,163 @@
+//<script type="text/javascript">
+var cool_ajax_req = false; // Used with ajax
+var cool_social_test_mode = false;
+
+var share_url = "http%3A%2F%2Fwww.thesuperheroquiz.com%2F";
+var share_text = ""; // used on Twitter and Pinterest as description
+var share_image = ""; // used on Pinterest
+var get_count_onclick = 1;
+var get_count_minutes = 720;
+
+if (share_text == "") share_text = document.title;
+
+// Put PHP $social_count_array into JS social_count_array
+var social_count_array = { 
+'facebook' : '13737', 'google' : '2620', 'linkedin' : '433', 'pinterest' : '29', 'twitter' : '948', };
+
+function display_social_count()
+{
+	/* This function displays the cached social count for each share button
+		which php loaded from mysql database. Or if called from ajax then
+		it will update the most recent social network count
+	*/
+	
+	var elems = document.getElementsByTagName('*');
+	for (var j=0; j<elems.length; j++) {
+		if (String(elems[j].className).match("cool_social_count")) {
+			for (var key in social_count_array) {
+				if (social_count_array.hasOwnProperty(key)) {
+					var network_re = new RegExp(key, 'gi');	
+					if (elems[j].parentElement.getAttribute("data-network").match(network_re))
+						elems[j].innerHTML = social_count_array[key];
+				}
+			}
+		}		
+	}	
+}
+
+function social_div_init() {
+	/* This function will take all elements with className "cool_social_div"
+		and initialize each button with the settings from the php script
+		1. Add share_url to all anchor tags	
+		2. Add onclick to share buttons if we are getting the count on click
+		3. Send each social network name to ajax one at a time if we are getting count every n minnutes
+	*/
+	
+	var elems = document.getElementsByTagName('*');
+	for (var j=0; j<elems.length; j++) {
+		if (String(elems[j].className).match("cool_social_div")) {
+			var a_tags = elems[j].getElementsByTagName("a");
+			for (var i = 0; i < a_tags.length; i++) { 
+				var network = a_tags[i].getAttribute("data-network");
+				// Add URL to anchor tags in share buttons
+				if (a_tags[i].href.match(/twitter/))
+					a_tags[i].href += share_url+"&text="+share_text;
+				else if (a_tags[i].href.match(/pinterest/))
+					a_tags[i].href += share_url+"&media="+share_image+"&description="+share_text;
+				else
+					a_tags[i].href += share_url;
+				
+				// Add onclick to share buttons
+				if (get_count_onclick)
+					(function () {
+						var network_name = a_tags[i].getAttribute("data-network");
+						if (document.addEventListener) // Chrome, Safari, FF, IE 9+
+							a_tags[i].addEventListener('click',function(event) { cool_send_ajax("network="+network_name+"&click=1"); },false);
+						else // IE < 9
+							a_tags[i].attachEvent('onclick',function(event) { cool_send_ajax("network="+network_name+"&click=1"); });
+					}()); // immediate invocation
+				
+				// Send each button's network to php one at a time
+				if (get_count_minutes)
+					cool_send_ajax("network="+network);	
+					
+			}
+		}
+	}
+}
+
+
+function cool_send_ajax(params) 
+{
+	if (cool_ajax_req) // Send ajax request later if another one is in progress
+	{
+		setTimeout(function()
+		{
+			cool_send_ajax(params); 
+			return;
+		} , 100);
+		return;
+    }
+    
+	// branch for native XMLHttpRequest object
+    if(window.XMLHttpRequest && !(window.ActiveXObject)) 
+	{
+    	try 
+		{
+			cool_ajax_req = new XMLHttpRequest();
+        } 
+		catch(e) 
+		{
+			cool_ajax_req = false;
+        }
+    // branch for IE/Windows ActiveX version
+    } 
+	else if(window.ActiveXObject) 
+	{
+       	try 
+		{
+        	cool_ajax_req = new ActiveXObject("Msxml2.XMLHTTP");
+      	} 
+		catch(e) 
+		{
+        	try 
+			{
+          		cool_ajax_req = new ActiveXObject("Microsoft.XMLHTTP");
+        	} 
+			catch(e) 
+			{
+          		cool_ajax_req = false;
+        	}
+		}
+    }
+	if(cool_ajax_req) 
+	{
+		//document.getElementById('test').innerHTML = params;
+		cool_ajax_req.onreadystatechange = cool_get_ajax;
+		cool_ajax_req.open("POST", "/social/coolsocial.php", true);
+		//Send the proper header information along with the request
+		cool_ajax_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		if (cool_social_test_mode) console.log(params);
+		cool_ajax_req.send(params);
+	}
+} // end function loadXMLDoc
+
+
+function cool_get_ajax() 
+{
+    // only if req shows "loaded"
+    if (cool_ajax_req.readyState == 4) 
+	{
+        // only if "OK"
+        if (cool_ajax_req.status == 200) 
+		{
+            if (cool_ajax_req.responseText)
+			{
+				if (cool_social_test_mode) console.log(cool_ajax_req.responseText);	
+				var variables = cool_ajax_req.responseText.split("="); // Ex: google=50
+				social_count_array[variables[0]] = variables[1];	
+				display_social_count();
+			}
+		} 
+		else 
+		{
+            console.log("There was a problem retrieving the ajax data:\n" +
+                cool_ajax_req.status);
+        }
+        cool_ajax_req = false;
+    }
+} // end function processReqChange()
+
+display_social_count();
+social_div_init();
+//</script>

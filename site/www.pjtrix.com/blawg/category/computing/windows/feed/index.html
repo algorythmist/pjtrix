@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Dread Pirate PJ's House of Hacks and Tricks &#187; windows</title>
+	<atom:link href="http://www.pjtrix.com/blawg/category/computing/windows/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.pjtrix.com/blawg</link>
+	<description></description>
+	<lastBuildDate>Sat, 23 Aug 2014 19:46:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.2.29</generator>
+	<item>
+		<title>iPhone Development on Windows &amp; Linux with open source tools</title>
+		<link>http://www.pjtrix.com/blawg/2009/07/21/iphone-development-on-windows-linux-with-open-source-tools/</link>
+		<comments>http://www.pjtrix.com/blawg/2009/07/21/iphone-development-on-windows-linux-with-open-source-tools/#comments</comments>
+		<pubDate>Tue, 21 Jul 2009 19:10:57 +0000</pubDate>
+		<dc:creator><![CDATA[dreadpiratepj]]></dc:creator>
+				<category><![CDATA[iphone]]></category>
+		<category><![CDATA[linux]]></category>
+		<category><![CDATA[open.source]]></category>
+		<category><![CDATA[windows]]></category>
+		<category><![CDATA[oscon2009]]></category>
+
+		<guid isPermaLink="false">http://www.pjtrix.com/blawg/?p=168</guid>
+		<description><![CDATA[Yesterday I presented at OSCON 2009. I spoke about how to use Eclipse and the iPhone-dev team&#8217;s GCC cross-compiler to develop for iPhone on Windows &#038; Linux. I also spoke about XMLVM, an open source project that lets you develop &#8230; <a href="http://www.pjtrix.com/blawg/2009/07/21/iphone-development-on-windows-linux-with-open-source-tools/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Yesterday I presented at OSCON 2009. I spoke about how to use Eclipse and the iPhone-dev team&#8217;s GCC cross-compiler to develop for iPhone on Windows &#038; Linux. I also spoke about XMLVM, an open source project that lets you develop in Java for Android and deploy on iPhone or Palm WebOS.</p>
+<p>You can download the slides and program examples <a href="http://pjtrix.com/iphone/presentations/OSCON2009-iPhone-and-GCC.zip">here</a>.</p>
+<p>To get started with open source iPhone development, you can download the <a href="http://pjtrix.com/iphone/presentations/OSCON2009/iphone-toolchain-linux.tgz">open source toolchain for Linux</a> or for <a href="http://pjtrix.com/iphone/presentations/OSCON2009/iphone-toolchain-windows.tgz">Windows/Cygwin</a>.</p>
+<p><strong>Note:</strong> To use the toolchain, you need to obtain the iPhone OS headers, frameworks and libraries. You can jailbreak your device and extract the frameworks and libraries using SSH, or you can decrypt the firmware and extract the framework and libraries from the decrypted disk image. The binaries you need are /System/Library/Frameworks and /usr/lib .</p>
+<p>You can download the headers from the iPhone-dev team&#8217;s Subversion repository with <code>svn co http://iphone-dev.googlecode.com/svn/branches/include-1.2-sdk</code> </p>
+<p>To use the iPhone-dev team&#8217;s headers, you need headers for Mac OS X 10.4 SDK. Then you type this at the command line:<br />
+<code><br />
+cd /path/to/iphone-dev/svn/branches/include-1.2-sdk<br />
+./configure --with-macosx-sdk=/Developer/SDKs/MacOSX10.4u.sdk</p>
+<p>sudo bash install-headers.sh<br />
+</code></p>
+<p>Or you can extract them from the official iPhone SDK. <img src="http://www.pjtrix.com/blawg/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Once you get the binaries and headers, move them to /usr/local/iphone-sysroot/ . The headers go in /usr/local/iphone-sysroot/usr/include/ , frameworks go in /usr/local/iphone-sysroot/System/Library/Frameworks/ , and libraries in /usr/local/iphone-sysroot/usr/lib/ .</p>
+<p>Then to compile and link, set CFLAGS and LDFLAGS like below :<br />
+<code><br />
+export CFLAGS=-I/usr/local/lib/gcc/arm-apple-darwin9/4.2.1/include \<br />
+-isysroot /usr/local/iphone-sysroot</p>
+<p>export LDFLAGS=-framework CoreFoundation -framework Foundation \<br />
+-framework UIKit -lobjc -bind_at_load -isysroot /usr/local/iphone-sysroot<br />
+</code></p>
+<p>Then use these compile and linker commands :<br />
+<code><br />
+/usr/local/bin/arm-apple-darwin9-gcc -c $(CFLAGS) main.c HelloWorld.m</p>
+<p>/usr/local/bin/arm-apple-darwin9-gcc $(LDFLAGS) HelloWorld.o main.o \<br />
+-o HelloWorld<br />
+</code></p>
+<p>The easiest way to set this up for each project is in a makefile. Look in the HelloWorld example in the zip file with the slides for an example.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.pjtrix.com/blawg/2009/07/21/iphone-development-on-windows-linux-with-open-source-tools/feed/</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+		</item>
+		<item>
+		<title>Continuing the conversation: PS3 Linux &amp; MS XNA</title>
+		<link>http://www.pjtrix.com/blawg/2007/01/23/continuing-the-conversation-ps3-linux-ms-xna/</link>
+		<comments>http://www.pjtrix.com/blawg/2007/01/23/continuing-the-conversation-ps3-linux-ms-xna/#comments</comments>
+		<pubDate>Tue, 23 Jan 2007 18:56:49 +0000</pubDate>
+		<dc:creator><![CDATA[dreadpiratepj]]></dc:creator>
+				<category><![CDATA[free.culture]]></category>
+		<category><![CDATA[game.development]]></category>
+		<category><![CDATA[hacks]]></category>
+		<category><![CDATA[linux]]></category>
+		<category><![CDATA[open.source]]></category>
+		<category><![CDATA[ps3.linux]]></category>
+		<category><![CDATA[software.development]]></category>
+		<category><![CDATA[sony.ps3]]></category>
+		<category><![CDATA[windows]]></category>
+		<category><![CDATA[xbox.360]]></category>
+		<category><![CDATA[xna]]></category>
+
+		<guid isPermaLink="false">http://www.pjtrix.com/blawg/2007/01/23/continuing-the-conversation-ps3-linux-ms-xna/</guid>
+		<description><![CDATA[Mateusz, Lenny, thanks for the comments. Update: Reader Mateusz points out that there is an effort under way to port the XNA frameworks to other platforms using Mono. It&#8217;s great to see what the subversive, creative types come up with &#8230; <a href="http://www.pjtrix.com/blawg/2007/01/23/continuing-the-conversation-ps3-linux-ms-xna/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Mateusz, Lenny, thanks for the comments.</p>
+<p><font color=red>Update: Reader Mateusz points out that there is <a href="http://www.taoframework.com/Mono.Xna">an effort under way to port the XNA frameworks to other platforms using Mono</a>. It&#8217;s great to see what the subversive, creative types come up with all on their own. It would be hilarious if PS3 owners could run XNA games by simply booting Linux. Take <b><i>that</i></b>, Redmond! Welcome to <b><i>our</i></b> social. LMAO!<br />
+</font></p>
+<p>My own take is that Sony is taking a laissez-faire approach, a la Franklin D. Roosevelt and the economy: let&#8217;s provide the tools, and whatever happens, happens. Let the market take it where it may. (I hope I am not embarrassing Mrs. Freite, my history teacher in high school, by mixing my economic strategies and presidents.)</p>
+<p>While that is great, I think they could be a bit more proactive. They could encourage garage game development with the PS3 Linux project, by marketing it as such. A program like the old <a href="http://en.wikipedia.org/wiki/Net_Yaroze">PSX Net Yaroze</a>, but with PS3s and Linux, could attract some great talent. (See? Sony has been thinking about this garage developer thing for <b><i>quite</i></b> a long time.)</p>
+<p>IBM and Toshiba see this as another marketing venue for the Power processor line, especially the work on the Cell Engine that they did. Toshiba only promotes Cell within its embedded processor market, not putting an oar in to help with the garage developer thing. IBM is a bit more active, but only within their established promotional circles: developerWorks and alphaWorks. And it is hardly a big push.</p>
+<p>Microsoft is, of course, going all out, promoting XNA as a garage developer&#8217;s haven, especially generating excitement with the possibility of garage developers selling games on XBox Live Marketplace for both PC and XBox360. In my opinion, MS is doing a better job at pushing their ideas.</p>
+<p>It’s like IBM and Sony don’t quite see what it is they have to do, having just provided the tools and sitting back to see what develops. While it’s great they’re not stirring the pot too much, the stew is gonna ruin if there’s no cook minding the stove.</p>
+<p>OK, that&#8217;s enough analogies for today. Thanks for keeping the conversation going, guys. Comment away, and let&#8217;s keep talking. Anyone else have any thoughts to share?</p>
+<p><!-- Technorati Tags Start --></p>
+<p>Technorati Tags:<br />
+<a href="http://technorati.com/tag/hacks" rel="tag">hacks</a>, <a href="http://technorati.com/tag/software.development" rel="tag">software.development</a>, <a href="http://technorati.com/tag/game.development" rel="tag">game.development</a>, <a href="http://technorati.com/tag/open.source" rel="tag">open.source</a>, <a href="http://technorati.com/tag/free.culture" rel="tag">free.culture</a>, <a href="http://technorati.com/tag/linux" rel="tag">linux</a>, <a href="http://technorati.com/tag/windows" rel="tag">windows</a>, <a href="http://technorati.com/tag/sony.ps3" rel="tag">sony.ps3</a>, <a href="http://technorati.com/tag/xbox.360" rel="tag">xbox.360</a>, <a href="http://technorati.com/tag/ps3.linux" rel="tag">ps3.linux</a>, <a href="http://technorati.com/tag/xna" rel="tag">xna</a>
+</p>
+<p><!-- Technorati Tags End --></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.pjtrix.com/blawg/2007/01/23/continuing-the-conversation-ps3-linux-ms-xna/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>What&#8217;s the deal with PS3 Linux? Simple: XNA</title>
+		<link>http://www.pjtrix.com/blawg/2007/01/22/whats-the-deal-with-ps3-linux-simple-xna/</link>
+		<comments>http://www.pjtrix.com/blawg/2007/01/22/whats-the-deal-with-ps3-linux-simple-xna/#comments</comments>
+		<pubDate>Mon, 22 Jan 2007 19:34:37 +0000</pubDate>
+		<dc:creator><![CDATA[dreadpiratepj]]></dc:creator>
+				<category><![CDATA[free.culture]]></category>
+		<category><![CDATA[game.development]]></category>
+		<category><![CDATA[hacks]]></category>
+		<category><![CDATA[linux]]></category>
+		<category><![CDATA[open.source]]></category>
+		<category><![CDATA[ps3.linux]]></category>
+		<category><![CDATA[software.development]]></category>
+		<category><![CDATA[sony.ps3]]></category>
+		<category><![CDATA[windows]]></category>
+		<category><![CDATA[xbox.360]]></category>
+		<category><![CDATA[xna]]></category>
+
+		<guid isPermaLink="false">http://www.pjtrix.com/blawg/2007/01/22/whats-the-deal-with-ps3-linux-simple-xna/</guid>
+		<description><![CDATA[Programming high-performance applications on the Cell BE processor, Part 1: An introduction to Linux on the PlayStation 3 The Sony PlayStation 3 (PS3) is the easiest and cheapest way for programmers to get their hands on the new Cell Broadband &#8230; <a href="http://www.pjtrix.com/blawg/2007/01/22/whats-the-deal-with-ps3-linux-simple-xna/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p><i><a href="http://www.ibm.com/developerworks/power/library/pa-linuxps3-1?ca=drs-tp0107">Programming high-performance applications on the Cell BE processor, Part 1: An introduction to Linux on the PlayStation 3</a></p>
+<p>The Sony PlayStation 3 (PS3) is the easiest and cheapest way for programmers to get their hands on the new Cell Broadband Engine (Cell BE) processor and take it for a drive. Discover what the fuss is all about, how to install Linux on the PS3, and how to get started developing for the Cell BE processor on the PS3.</i></p>
+<p>Let&#8217;s ignore the $600 USD &#8220;cheapest&#8221; flame bait and concentrate on the business significance of Sony and IBM providing and promoting Linux for the PS3, shall we?</p>
+<p>The PS3 is not the first game console officially sanctioned by the manufacturer to run Linux out of the box. For a few years, <a href="http://playstation2-linux.com">Sony sold a $99 Linux kit for the PS2</a>, available only through their online store. It was discontinued early last year, and is now only available on eBay.</p>
+<p>But why would Sony provide Linux for any of their video game consoles? What do they have to gain? In business, nothing is done &#8220;just&#8221; for the benefit of the consumer, much less for pure &#8220;free as in freedom&#8221; idealism. In the end, it all comes down to driving revenue and profits up, which ultimately pleases the shareholders. Cynical, perhaps, but do you really believe a public company as large as Sony does anything if not for the sake of revenue and profits? Any activity that does not somehow help improve those two factors, will not be seen very positively with the shareholders.</p>
+<p>But still, what does it mean? How does PS3 Linux translate into revenue and profits for Sony? Let&#8217;s examine this some more, in the context of an obscure game console manufacturer with a similar strategy.</p>
+<p>In Korea, the <a href="http://en.wikipedia.org/wiki/GP32">GP32 game console</a> may not have run Linux, but the manufacturer provided on its website, a full set of open source programming tools that ran on Windows. Linux and Mac OS X support was added by the GP32 developer community shortly later. This made the GP32 the first off-the-shelf game console where the <a href="http://en.wikipedia.org/wiki/GP32#Homebrew_Friendly">users were officially encouraged to make games for it</a>. GamePark, the makers of the GP32, followed up nearly four years later with the <a href="http://gp2x.co.uk/aboutgp2x.html">Linux-powered GP2X</a>, which also had a free, full set of development tools, including most of the source for the device&#8217;s implementation of Linux.</p>
+<p>The response to the consoles was great, both in its native Korea and around the world. There is a healthy global open source game development community. Code-savvy game geeks from all around the world have taken to the GP32 and GP2X. Instead of dismal failure competing against Nintendo and Sony, GamePark has survived and grown against all odds. The gadget-happy Koreans responded despite fierce competition, and a healthy Korean commercial game developer community has grown to serve the Korean GP32 market. Many of these commercial developers were founded by the proverbial &#8220;two guys in a garage,&#8221; propelled to creativity by the open community GamePark fostered.</p>
+<p>So back to the PS3. Sure, it&#8217;s freakishly expensive for just a <a href="http://arstechnica.com/reviews/hardware/ps3.ars/4">single threaded, single tasking, web browser, digital photo gallery, photo slideshow player, propietary-format movie player, game console</a>. But with Linux and the <a href="http://www.oreilly.com/catalog/1593270046/">Blender Game Kit</a>, OpenGL, <a href="http://www.libsdl.org/">SDL</a>, etc., this is a garage game coder&#8217;s dream workstation on the cheap, with high-definition accelerated 3D graphics, surround sound, and all kinds of fun wireless tech at the developer&#8217;s fingertips. At $600 for a 60 GB model with 512 MB of RAM, it would make a nicer Linux computer than most sub-$1000 Windows PCs out there.</p>
+<p>Perhaps a cottage gaming industry will grow out of the PS3 Linux strategy, like the GP32&#8217;s in Korea. Which makes this Linux play by Sony the direct competitor to <a href="http://arstechnica.com/articles/xna.ars">Microsoft&#8217;s XNA move</a>. You see, both Sony and Microsoft see independent game developers as the future savior of the game industry.</p>
+<p>The big game publishers and developers screwed themselves, just as the MPAA and RIAA did, by making production ever more expensive, formulaic, and insipidly uncreative, and by depending on the quarterly mega-blockbuster to survive. They did this at a time when more people than ever have access to the means of production and distribution of digital creative content.</p>
+<p>The goal of Sony&#8217;s Linux strategy and of Microsoft&#8217;s XNA, is to attract the independent game developers to their respective platforms. Microsoft believes that giving the tools away for &#8220;free as in free beer,&#8221; while keeping the secret sauce bottled up, is the successful strategy. Sony believes making the tools as open as possible without screwing the pooch is the the best strategy.</p>
+<p>Now, as an open source fan, I will argue that a truly open community of coders, without central control and oversight, is going to prevail over the &#8220;you must please the gatekeeper&#8221; culture Microsoft wants to impose with XNA on XBox360.</p>
+<p>But let&#8217;s not be too idealistic and see this independent game developer thing for what it really is. Just like IBM&#8217;s open source moves and Tim O&#8217;Reilly&#8217;s publishing strategy, both Microsoft&#8217;s and Sony&#8217;s strategies are all about the alpha geek mind share, and self-interest in the increase in revenue it generates.</p>
+<p>But cynical as that may sound, open source is still the better thing. It gives more control to the developer and imposes less order, which leads to greater opportunity for creativity to go where it may. Anything less than an open technology and open community will stave off innovation before it even has a chance to set in.</p>
+<p><!-- Technorati Tags Start --></p>
+<p>Technorati Tags:<br />
+<a href="http://technorati.com/tag/hacks" rel="tag">hacks</a>, <a href="http://technorati.com/tag/software.development" rel="tag">software.development</a>, <a href="http://technorati.com/tag/game.development" rel="tag">game.development</a>, <a href="http://technorati.com/tag/open.source" rel="tag">open.source</a>, <a href="http://technorati.com/tag/free.culture" rel="tag">free.culture</a>, <a href="http://technorati.com/tag/linux" rel="tag">linux</a>, <a href="http://technorati.com/tag/windows" rel="tag">windows</a>, <a href="http://technorati.com/tag/sony.ps3" rel="tag">sony.ps3</a>, <a href="http://technorati.com/tag/xbox.360" rel="tag">xbox.360</a>, <a href="http://technorati.com/tag/ps3.linux" rel="tag">ps3.linux</a>, <a href="http://technorati.com/tag/xna" rel="tag">xna</a>
+</p>
+<p><!-- Technorati Tags End --></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.pjtrix.com/blawg/2007/01/22/whats-the-deal-with-ps3-linux-simple-xna/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Updates, upgrades &#8230;</title>
+		<link>http://www.pjtrix.com/blawg/2006/11/03/another-seamless-and-successful-wordpress-upgrade-more-proof-of-microsofts-growing-irrelevance/</link>
+		<comments>http://www.pjtrix.com/blawg/2006/11/03/another-seamless-and-successful-wordpress-upgrade-more-proof-of-microsofts-growing-irrelevance/#comments</comments>
+		<pubDate>Fri, 03 Nov 2006 21:21:57 +0000</pubDate>
+		<dc:creator><![CDATA[dreadpiratepj]]></dc:creator>
+				<category><![CDATA[trustworthy.computing]]></category>
+		<category><![CDATA[upgrades]]></category>
+		<category><![CDATA[windows.vista]]></category>
+		<category><![CDATA[wordpress]]></category>
+
+		<guid isPermaLink="false">http://www.pjtrix.com/blawg/2006/11/03/another-seamless-and-successful-wordpress-upgrade-more-proof-of-microsofts-growing-irrelevance/</guid>
+		<description><![CDATA[I hadn&#8217;t realized so much time had passed since my last post. Mea culpa, I haven&#8217;t made time for new content. I&#8217;d been working my butt off and hanging out in Guild Wars to relax. My apologies to my faithful &#8230; <a href="http://www.pjtrix.com/blawg/2006/11/03/another-seamless-and-successful-wordpress-upgrade-more-proof-of-microsofts-growing-irrelevance/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I hadn&#8217;t realized so much time had passed since my last post. Mea culpa, I haven&#8217;t made time for new content. I&#8217;d been working my butt off and hanging out in Guild Wars to relax. <img src="http://www.pjtrix.com/blawg/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /> My apologies to my faithful and adoring readership (all four of you!)</p>
+<p>I upgraded WordPress to version 2.0.5 just before I started this post. It was another textbook example of a successful upgrade.</p>
+<p>Speaking of seamless and successful updates, I really can&#8217;t say the same about Microsoft&#8217;s upgrade to IE. IE7 has only been out two weeks, and <a title="Microsoft's new browser haunted by old flaw" target="_blank" href="http://security.itworld.com/5043/061030msflaw/page_1.html">it already suffers from a bug from the early IE6 days.</a></p>
+<p>I would be willing to cut MS some slack if this was a new flaw. As a developer, I know that bugs happen. No one writes perfect code. But this is an old bug, and no developer worthy of the appelation &#8220;world-class&#8221; would have missed it. There&#8217;s no reason a &#8220;world-class&#8221; QA department should have missed it either.</p>
+<p>If this is indicative of the <a target="_blank" title="Computing you can count on? Yeah, right" href="http://www.microsoft.com/mscorp/execmail/2002/07-18twc.mspx">Trustworthy Computing</a> initiative that allegedly started with the development of Windows Server 2003, then I really, really wonder why anybody will bother to get Vista for anything but the computer games. I mean, that&#8217;s all Windows is good for, isn&#8217;t it? Oh yeah, I forgot. It&#8217;s great for spreading spam bots, too.</p>
+<p>This IE7 bug simply proves there is no guarantee, no matter what monkey boy Ballmer and goodie-two-shoes Gates say, that IE7 and Vista won&#8217;t bite your ass with the same bugs that plagued IE and Windows for the last half decade.</p>
+<p>For the guys up there in Redmond, here&#8217;s a freebie development mentoring lesson you have apparently not being taught by your &#8220;visionary leader&#8221;: regression test.</p>
+<p>Trustworthy computing, my ass.</p>
+<p><!-- Technorati Tags Start --></p>
+<p>Technorati Tags:<br />
+<a href="http://technorati.com/tag/upgrades" rel="tag">upgrades</a>,<br />
+<a href="http://technorati.com/tag/weblogs" rel="tag">weblogs</a>,<br />
+<a href="http://technorati.com/tag/wordpress" rel="tag">wordpress</a>,<br />
+<a href="http://technorati.com/tag/windows.vista" rel="tag">windows.vista</a>,<br />
+<a href="http://technorati.com/tag/trustworthy.computing" rel="tag">trustworthy.computing</a>
+</p>
+<p><!-- Technorati Tags End --></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.pjtrix.com/blawg/2006/11/03/another-seamless-and-successful-wordpress-upgrade-more-proof-of-microsofts-growing-irrelevance/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

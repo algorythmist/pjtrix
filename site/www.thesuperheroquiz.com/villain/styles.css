@@ -1,0 +1,61 @@
+body
+{
+	font-family: arial;
+	font-size: 1em;
+}
+.quiz_div
+{
+	background-color: #FFFFFF; 
+	overflow: auto; 
+	width: 450px;
+	height: 320px; 
+	border: 1px solid black;
+	padding:0px; 
+	margin: 0px
+}
+fieldset, legend
+{
+	margin: 1px;
+	padding: 1px;
+
+}
+.google_top
+{
+	min-width:320px;
+	max-width:970px;
+	width:100%;
+}
+.google_left
+{
+	min-width:160px;
+	max-width:320px;
+	width:100%;	
+}
+.google_mobile
+{
+	display: none;
+}
+.social-div
+{
+	display: table-row;
+	vertical-align: middle;
+}
+.social-button
+{
+	padding: 5px 14px;
+	display: table-cell;
+	vertical-align: middle;
+	transform: scale(1.13);
+	-webkit-transform: scale(1.13);
+}
+input[type="radio"]
+{
+	margin: 10px 10px;
+	width: 1.25em;
+	height: 1.25em;
+}
+label:hover
+{
+	background: #aaaaff;
+}
+

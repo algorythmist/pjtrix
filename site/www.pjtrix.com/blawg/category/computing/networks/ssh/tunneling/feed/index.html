@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Dread Pirate PJ's House of Hacks and Tricks &#187; tunneling</title>
+	<atom:link href="http://www.pjtrix.com/blawg/category/computing/networks/ssh/tunneling/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.pjtrix.com/blawg</link>
+	<description></description>
+	<lastBuildDate>Sat, 23 Aug 2014 19:46:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.2.29</generator>
+	<item>
+		<title>Another seamless upgrade, and visitor comments.</title>
+		<link>http://www.pjtrix.com/blawg/2006/08/14/another-seamless-upgrade-and-visitor-comments/</link>
+		<comments>http://www.pjtrix.com/blawg/2006/08/14/another-seamless-upgrade-and-visitor-comments/#comments</comments>
+		<pubDate>Mon, 14 Aug 2006 05:53:01 +0000</pubDate>
+		<dc:creator><![CDATA[dreadpiratepj]]></dc:creator>
+				<category><![CDATA[hacks]]></category>
+		<category><![CDATA[ssh]]></category>
+		<category><![CDATA[tunneling]]></category>
+		<category><![CDATA[upgrades]]></category>
+		<category><![CDATA[wordpress]]></category>
+
+		<guid isPermaLink="false">http://www.pjtrix.com/blawg/2006/08/14/another-seamless-upgrade-and-visitor-comments/</guid>
+		<description><![CDATA[I upgraded to WordPress 2.0.4 in thirty seconds, just a few minutes ago. After login in as administrator and deactivating my plugins, those thirty seconds included SSHing in to my server and running this: #making an in-server backup in folder &#8230; <a href="http://www.pjtrix.com/blawg/2006/08/14/another-seamless-upgrade-and-visitor-comments/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>I upgraded to WordPress 2.0.4 in thirty seconds, just a few minutes ago. After login in as administrator and deactivating my plugins, those thirty seconds included SSHing in to my server and running this:</p>
+<pre>#making an in-server backup in folder blawg.bak
+
+cp -r blawg blawg.bak
+
+#backup the database
+
+mysqldump -u user -ppassword database-name > blawg-backup.sql
+
+# upgrade the wordpress files
+
+wget http://wordpress.org/latest.tar.gz
+
+tar xzvpf latest.tar.gz
+
+cp -r wordpress/* blawg/</pre>
+<p>Then I visited http://www.pjtrix.com/blawg/update.php (which I&#8217;ve renamed, suckas.) And that was it, really! Many thanks to the WordPress developers for such an easy upgrade.</p>
+<p>&#8212;&#8212;-</p>
+<p>A visitor sent me an email a few days ago, correcting my hack post for SSH tunneling of HTTP. Jim was his name, and he said that he wasn&#8217;t 100 % sure, but that he believed SSH only used the keys for authentication purposes, and that smaller session keys were created on the fly after authentication was successful. Therefore he believed the strength of the encryption wouldn&#8217;t be an order of magnitude better than SSL, as I claimed at the end of my post.</p>
+<p>I am afraid Jim is correct. The session key size varies from one implementation of SSH to another, but they all support 168-bit triple-DES. This is the default for most OpenSSH installs on Linux and BSD these days. So while 168-bit triple-DES is believed to be better than SSL&#8217;s 128-bit RSA, it&#8217;s not an order of magnitude improvement.<br />
+Thanks Jim, for the correction.</p>
+<p><!-- Technorati Tags Start --></p>
+<p>Technorati Tags:<br />
+<a href="http://technorati.com/tag/hacks" rel="tag">hacks</a>, <a href="http://technorati.com/tag/ssh" rel="tag">ssh</a>, <a href="http://technorati.com/tag/tunneling" rel="tag">tunneling</a>, <a href="http://technorati.com/tag/upgrades" rel="tag">upgrades</a>, <a href="http://technorati.com/tag/wordpress" rel="tag">wordpress</a>
+</p>
+<p><!-- Technorati Tags End --></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.pjtrix.com/blawg/2006/08/14/another-seamless-upgrade-and-visitor-comments/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>PJTrix.com&#8217;s Hack #1 &#8211; SSH tunneling for ultra-secure web app administration</title>
+		<link>http://www.pjtrix.com/blawg/2006/07/18/pjtrixcoms-hack-1-ssh-tunneling-for-ultra-secure-web-app-administration/</link>
+		<comments>http://www.pjtrix.com/blawg/2006/07/18/pjtrixcoms-hack-1-ssh-tunneling-for-ultra-secure-web-app-administration/#comments</comments>
+		<pubDate>Tue, 18 Jul 2006 11:59:46 +0000</pubDate>
+		<dc:creator><![CDATA[dreadpiratepj]]></dc:creator>
+				<category><![CDATA[hacks]]></category>
+		<category><![CDATA[open.source]]></category>
+		<category><![CDATA[ssh]]></category>
+		<category><![CDATA[tunneling]]></category>
+
+		<guid isPermaLink="false">http://www.pjtrix.com/blawg/2006/07/18/pjtrixcoms-hack-1-ssh-tunneling-for-ultra-secure-web-app-administration/</guid>
+		<description><![CDATA[At long last, here is the first PJTrix.com hack. It&#8217;s longer than most of my entries, so plan to read a while. Come back when you have the time if it interests you. Over the past few months, some friends &#8230; <a href="http://www.pjtrix.com/blawg/2006/07/18/pjtrixcoms-hack-1-ssh-tunneling-for-ultra-secure-web-app-administration/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>At long last, here is the first PJTrix.com hack. It&#8217;s longer than most of my entries, so plan to read a while. Come back when you have the time if it interests you.</p>
+<p>Over the past few months, some friends and cow-orkers have come to my site, and invariably I get the &#8220;Where are the hacks?!? When you gave me the link, I was excited and assumed the site had all your hacks and tricks?!? What happened?!?&#8221; You see, my fellow cow-orkers specially, know me as a man of many technical talents. I can turn any normal workday into a techfest show-and-tell, just by emptying my pockets or laptop bag, or discussing my latest interests.</p>
+<p>So without much further ado &#8230;</p>
+<h3>Hack #1 &#8211; SSH tunneling for ultra-secure web app administration</h3>
+<p>I&#8217;m a fairly paranoid person. OK, I take that back: I&#8217;m a really paranoid person when it comes to my online life, but only fairly paranoid in my real life. And just to set the record straight, simply because I am paranoid and admit it freely, doesn&#8217;t mean someone out there isn&#8217;t really out to get me! They just haven&#8217;t gotten me yet.</p>
+<p>I&#8217;ve been around the tech block a few decades, and have had Commodore C64 and Amiga demo scene BBSs defaced, and later, a Sega Dreamcast demo scene website and a Yahoo! webmail account taken over, by a prankster who proceeded to send crap to various Dreamcast scene mailing lists I frequented, pretending to be me. With these experiences came lessons that I apply as much as I can. Because of them, I&#8217;ve been without security related problems for the last six years.</p>
+<p>That&#8217;s six years with no virus attacks, no remote IRC bots, no trojans or backdoors installed, no rootkits on my personal computers or servers. Being paranoid pays dividends in serenity. I can sleep at night knowing I&#8217;m not sending out spam or aiding in DDOS attacks. Can you say the same, with certainty? <img src="http://www.pjtrix.com/blawg/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<h3>The problem</h3>
+<p>One of the things I don&#8217;t like about the stock WordPress install, is that the administration pages are not secured with SSL. There are various write-ups on how to modify the code to accomplish this, but applying them makes it more complicated to upgrade WordPress. And I want my WordPress upgrade to be as painless as possible, or I&#8217;ll just put it off.</p>
+<p>One of the reasons I put off upgrading from WordPress 2.0 to 2.0.1, 2.0.2, and finally 2.0.3, is that I had modified my WordPress install with one of these SSL hacks. I could feel the paranoia mount up as I thought <em>&#8220;My username and password may be SSL secured, but there are known security holes in WordPress 2.0. I&#8217;ll better upgrade ASAP!&#8221;</em> So after RailsDay, since I didn&#8217;t have any work, I upgraded to WP 2.0.3 and didn&#8217;t apply the SSL hack.</p>
+<p>You see, I have a secure way of logging in to the admin pages, and still keep the WordPress upgrade as simple as possible. (By the way, this trick works for proxying all web access to a server, it&#8217;s not just for WordPress administration.)</p>
+<h3>Introducing SSH tunneling</h3>
+<p>SSH is called Secure SHell, and many people just think of it that way. But it does more than that, with secure remote file copying and secure FTP tranfering of files as built-in features. Under the hood of the secure terminal access and file transfers, lies a packet tunneling framework with great flexibility.</p>
+<p>With SSH tunneling, it is possible to connect to one computer at one port, and forward the TCP request to any other computer at the same or any other port. This only works for TCP connections, though. UDP-heavy protocols such as BitTorrent peering and seeding can&#8217;t travel through &#8220;regular&#8221; SSH tunnels.</p>
+<p>(There&#8217;s one kind of SSH tunnel, the SSH SOCKS proxy, that does allow UDP packets through, but only in one direction. So it&#8217;s not as effective for P2P tunneling anyhow. We&#8217;ll discuss SSH SOCKS proxying and its uses some other time.)</p>
+<h3>So how do you tunnel to a web host with SSH?</h3>
+<p>First, using a plain text editor (not Wordpad, Windows people; use Notepad) open your hosts file on your local host (not on the web server.) In Unix the file lives in:</p>
+<pre>/etc/hosts</pre>
+<p>In Windows, it lives in:  ** usually **</p>
+<pre>C:/Windows/system32/drivers/etc/hosts</pre>
+<p>In Windows, the operating system isn&#8217;t always installed on drive C and not always in a folder called Windows. But ninety-nine thousand times out of a hundred thousand, it will probably be like this. So don&#8217;t sweat it, specially if you bought your Windows PC already set up. And if it wasn&#8217;t already set up, you probably already know where you installed your Windows. <img src="http://www.pjtrix.com/blawg/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>The hosts file wil contain a line like this:</p>
+<pre>127.0.0.1		localhost</pre>
+<p>While preserving the rest of the contents of the file, change that line to read like this (substitute serverName as appropriate for the web host you want to tunnel to):</p>
+<pre>127.0.0.1		localhost serverName</pre>
+<p>Second, install SSH on your local host. If you&#8217;re on Windows, this can be Putty or the SSH client for Cygwin. (There are plenty of writeups about both open source Windows products, so use Google search for further help with that.) Most Linux distributions come with at least the SSH client installed. Mac OS X and Solaris come with both SSH client and server software installed.</p>
+<p>Third, you need an SSH login account on your web server. Not all shared hosting accounts give shell access, so it may be that you can&#8217;t use my little trick. Virtual private hosts and dedicated servers definitely have SSH if they&#8217;re Unix-based. If you host your weblog on Windows, you have other problems besides no remote secure shell access. It&#8217;s called gullibility. Again, look it up on Google. <img src="http://www.pjtrix.com/blawg/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Now comes the good part. Once you have installed an SSH client, and have SSH access to your remote server and a shell account, you have to forward port 80 <strong><em>from</em></strong> your local host <strong><em>to</em></strong> the web server, with this command (substitute serverIP and accountName as appropriate; namely, you need the IP address of your web host, or a <em>different</em> domain name that resolves to the same IP as your web host):</p>
+<pre>ssh -L 80:serverIP:80 -N accountName@serverIP</pre>
+<p>If you&#8217;re using Putty, the command is:</p>
+<pre>plink -L 80:serverIP:80 -N accountName@serverIP</pre>
+<p>Make sure your Putty installation is on the command-line PATH. If you don&#8217;t know what that is, what are you doing reading this far?!? <img src="http://s.w.org/images/core/emoji/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Now, when you browse to http://serverName (not serverIP), SSH will tunnel from your local host to the web server, and your connection will be encrypted just a tad better than industrial-strength SSL. Most SSH implementations let you choose from a variety of protocols and session key sizes, such as Blowfish and 256-bit session keys. That&#8217;s double the encryption power of the 128-bit RSA encryption in SSL. Ultra-secure, baby! <img src="http://www.pjtrix.com/blawg/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /> (Thanks to Jim for the clarification.)</p>
+<p>And there you have it, PJTrix.com&#8217;s Hack #1.</p>
+<p>(Soon, I&#8217;m putting up a Wiki to collect these. So consider this text as my second draft of this hack. Any comments, improvements, criticisms, are welcome in the comments. Thanks for reading this far!)</p>
+<p><!-- Technorati Tags Start --></p>
+<p>Technorati Tags:<br />
+<a rel="tag" href="http://technorati.com/tag/open%20source">open source</a>, <a rel="tag" href="http://technorati.com/tag/hacks">hacks</a>, <a rel="tag" href="http://technorati.com/tag/ssh">ssh</a>, <a rel="tag" href="http://technorati.com/tag/tunneling">tunneling</a></p>
+<p><!-- Technorati Tags End --></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.pjtrix.com/blawg/2006/07/18/pjtrixcoms-hack-1-ssh-tunneling-for-ultra-secure-web-app-administration/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

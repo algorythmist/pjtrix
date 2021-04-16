@@ -1,0 +1,42 @@
+.holder
+{
+	width: auto;
+}
+.quiz_div
+{
+	height: auto; 
+	width: auto; 
+}
+.margin
+{
+	width:0px;
+}
+.textbox, .google_top, .google_left, .facebook
+{
+	display: none;
+}
+@media (min-width: 768px) /* tablets */
+{
+	.google_left
+	{
+		display: block;
+	}
+	.margin 
+	{
+		width: 160px;
+		height: 100%;
+		float: left;
+	}
+	.google_mobile
+	{
+		margin-left: 160px;
+	}
+}
+.google_mobile
+{
+	display: block;
+}
+h1
+{
+	font-size: 1em;
+}

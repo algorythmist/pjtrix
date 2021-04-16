@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Dread Pirate PJ's House of Hacks and Tricks &#187; iphone</title>
+	<atom:link href="http://www.pjtrix.com/blawg/category/technology/gadgets/iphone/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.pjtrix.com/blawg</link>
+	<description></description>
+	<lastBuildDate>Sat, 23 Aug 2014 19:46:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.2.29</generator>
+	<item>
+		<title>iPhone Development on Windows &amp; Linux with open source tools</title>
+		<link>http://www.pjtrix.com/blawg/2009/07/21/iphone-development-on-windows-linux-with-open-source-tools/</link>
+		<comments>http://www.pjtrix.com/blawg/2009/07/21/iphone-development-on-windows-linux-with-open-source-tools/#comments</comments>
+		<pubDate>Tue, 21 Jul 2009 19:10:57 +0000</pubDate>
+		<dc:creator><![CDATA[dreadpiratepj]]></dc:creator>
+				<category><![CDATA[iphone]]></category>
+		<category><![CDATA[linux]]></category>
+		<category><![CDATA[open.source]]></category>
+		<category><![CDATA[windows]]></category>
+		<category><![CDATA[oscon2009]]></category>
+
+		<guid isPermaLink="false">http://www.pjtrix.com/blawg/?p=168</guid>
+		<description><![CDATA[Yesterday I presented at OSCON 2009. I spoke about how to use Eclipse and the iPhone-dev team&#8217;s GCC cross-compiler to develop for iPhone on Windows &#038; Linux. I also spoke about XMLVM, an open source project that lets you develop &#8230; <a href="http://www.pjtrix.com/blawg/2009/07/21/iphone-development-on-windows-linux-with-open-source-tools/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Yesterday I presented at OSCON 2009. I spoke about how to use Eclipse and the iPhone-dev team&#8217;s GCC cross-compiler to develop for iPhone on Windows &#038; Linux. I also spoke about XMLVM, an open source project that lets you develop in Java for Android and deploy on iPhone or Palm WebOS.</p>
+<p>You can download the slides and program examples <a href="http://pjtrix.com/iphone/presentations/OSCON2009-iPhone-and-GCC.zip">here</a>.</p>
+<p>To get started with open source iPhone development, you can download the <a href="http://pjtrix.com/iphone/presentations/OSCON2009/iphone-toolchain-linux.tgz">open source toolchain for Linux</a> or for <a href="http://pjtrix.com/iphone/presentations/OSCON2009/iphone-toolchain-windows.tgz">Windows/Cygwin</a>.</p>
+<p><strong>Note:</strong> To use the toolchain, you need to obtain the iPhone OS headers, frameworks and libraries. You can jailbreak your device and extract the frameworks and libraries using SSH, or you can decrypt the firmware and extract the framework and libraries from the decrypted disk image. The binaries you need are /System/Library/Frameworks and /usr/lib .</p>
+<p>You can download the headers from the iPhone-dev team&#8217;s Subversion repository with <code>svn co http://iphone-dev.googlecode.com/svn/branches/include-1.2-sdk</code> </p>
+<p>To use the iPhone-dev team&#8217;s headers, you need headers for Mac OS X 10.4 SDK. Then you type this at the command line:<br />
+<code><br />
+cd /path/to/iphone-dev/svn/branches/include-1.2-sdk<br />
+./configure --with-macosx-sdk=/Developer/SDKs/MacOSX10.4u.sdk</p>
+<p>sudo bash install-headers.sh<br />
+</code></p>
+<p>Or you can extract them from the official iPhone SDK. <img src="http://www.pjtrix.com/blawg/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Once you get the binaries and headers, move them to /usr/local/iphone-sysroot/ . The headers go in /usr/local/iphone-sysroot/usr/include/ , frameworks go in /usr/local/iphone-sysroot/System/Library/Frameworks/ , and libraries in /usr/local/iphone-sysroot/usr/lib/ .</p>
+<p>Then to compile and link, set CFLAGS and LDFLAGS like below :<br />
+<code><br />
+export CFLAGS=-I/usr/local/lib/gcc/arm-apple-darwin9/4.2.1/include \<br />
+-isysroot /usr/local/iphone-sysroot</p>
+<p>export LDFLAGS=-framework CoreFoundation -framework Foundation \<br />
+-framework UIKit -lobjc -bind_at_load -isysroot /usr/local/iphone-sysroot<br />
+</code></p>
+<p>Then use these compile and linker commands :<br />
+<code><br />
+/usr/local/bin/arm-apple-darwin9-gcc -c $(CFLAGS) main.c HelloWorld.m</p>
+<p>/usr/local/bin/arm-apple-darwin9-gcc $(LDFLAGS) HelloWorld.o main.o \<br />
+-o HelloWorld<br />
+</code></p>
+<p>The easiest way to set this up for each project is in a makefile. Look in the HelloWorld example in the zip file with the slides for an example.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.pjtrix.com/blawg/2009/07/21/iphone-development-on-windows-linux-with-open-source-tools/feed/</wfw:commentRss>
+		<slash:comments>13</slash:comments>
+		</item>
+		<item>
+		<title>My first book is finally a go! Woo hoo!</title>
+		<link>http://www.pjtrix.com/blawg/2009/06/04/my-first-book-is-finally-a-go-woo-hoo/</link>
+		<comments>http://www.pjtrix.com/blawg/2009/06/04/my-first-book-is-finally-a-go-woo-hoo/#comments</comments>
+		<pubDate>Fri, 05 Jun 2009 02:04:43 +0000</pubDate>
+		<dc:creator><![CDATA[dreadpiratepj]]></dc:creator>
+				<category><![CDATA[game.development]]></category>
+		<category><![CDATA[iphone]]></category>
+		<category><![CDATA[life]]></category>
+		<category><![CDATA[software.development]]></category>
+		<category><![CDATA[writing]]></category>
+
+		<guid isPermaLink="false">http://www.pjtrix.com/blawg/?p=135</guid>
+		<description><![CDATA[From February to April, I was working evenings and weekends fulfilling a dream I&#8217;ve had for many decades: writing a book about a subject I really care about: game development. On June 22 2009, Apress is publishing a book I &#8230; <a href="http://www.pjtrix.com/blawg/2009/06/04/my-first-book-is-finally-a-go-woo-hoo/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>From February to April, I was working evenings and weekends fulfilling a dream I&#8217;ve had for many decades: writing a book about a subject I really care about: game development. On June 22 2009, Apress is publishing a book I collaborated on as lead author and tech reviewer : <a href="http://iphonegamesbook.com">iPhone Games Projects</a>.<br />
+<a href="http://iphonegamesbook.com"><br />
+<img src="http://pjtrix.com/images/iPhoneGamesProjects-BookCover.jpg" alt="Book cover" /><br />
+</a></p>
+<p>There are chapters by :</p>
+<ol>
+<li>Olivier Hennessy &#038; Clayton Kane, of Posimotion, developers of Bikini Hunt and Apache Lander</li>
+<li>Joachim Bondo, of Cocoa Stuff; developer of Deep Green, a beautiful chess game for iPhone</li>
+<li>Richard Zito &#038; Matthew Aitken, of Swipe Interactive, developers of QuickDraw and Pole2Pole</li>
+<li>Aaron Fothergill, of Strange Flavour, developer of Flick Sport Fishing, one of the top 20 best selling apps on the App Store</li>
+<li>Brian Greenstone, of Pangea Software, developer of Enigmo and Cro-Mag Rally, two of the top 5 best selling apps on the App Store</li>
+<li>Mike Kasprzak, of Sykhronics Entertainment; his game Smiles was one of the finalists for Best Mobile Game on the IGF Mobile 2009 competition</li>
+<li>Mike Lee, co-founder of Tapulous, now at Apple, lead developer of Tap Tap Revenge, the most downloaded game on the history of the App Store</li>
+<li>And a bonus free chapter by Jamie Gotch, of Subatomic Studios, developers of Fieldrunners, winner of Best Mobile Game on the IGF Mobile 2009 competition</li>
+</ol>
+<p>As tech reviewer for the book, I checked everyone&#8217;s writing for technical accuracy. That was really a great experience. I learned a lot and had fun running everyone&#8217;s sample code and checking their tips and tricks for myself.</p>
+<p>I also wrote one chapter for the book, on how to implement RESTful web services for high score leaderboards and achievements on iPhone. There&#8217;s code in the chapter for a simple Rails web service, and native code for the iPhone as well. It&#8217;s a rather deep look at the subject.</p>
+<p>I also collaborated with Jamie Gotch on a bonus free chapter. In the chapter we discussed getting started with programming for iPhone, a few tips and tricks, and the A* path finding algorithm. I also developed a Puyo clone and explained the most important parts of the code.</p>
+<p>Full source code for the Puyo game will be provided. There is also source code for 3 other sample apps. All the sample code will be made available the same day as the book release <a href="http://iphonegamesbook.com">at the book&#8217;s support page</a> and at apress.com</p>
+<p>This was a very neat experience for me. I&#8217;ve wanted to have my name on a computer book, and I&#8217;ve enjoyed programming games in my spare time, since before I was a teenager (more than 30 years ago, yo! Where has time gone?)</p>
+<p>The iPhone gives me, and everyone with the interest, a chance to develop games for others, in a very cool platform with lots of traction. This book, coupled with <a href="http://bit.ly/iphskdbk-blog">Beginning iPhone Development</a>, can give you the tools to reach for the stars with your own creations! Enjoy!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.pjtrix.com/blawg/2009/06/04/my-first-book-is-finally-a-go-woo-hoo/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		</item>
+		<item>
+		<title>Obligatory WordPress upgrade post #10101010 and other rumblings at Chez PJ</title>
+		<link>http://www.pjtrix.com/blawg/2008/11/28/obligatory-wordpress-upgrade-post-10101010-and-other-rumblings-at-chez-pj/</link>
+		<comments>http://www.pjtrix.com/blawg/2008/11/28/obligatory-wordpress-upgrade-post-10101010-and-other-rumblings-at-chez-pj/#comments</comments>
+		<pubDate>Sat, 29 Nov 2008 03:24:53 +0000</pubDate>
+		<dc:creator><![CDATA[dreadpiratepj]]></dc:creator>
+				<category><![CDATA[android]]></category>
+		<category><![CDATA[gadgets]]></category>
+		<category><![CDATA[iphone]]></category>
+		<category><![CDATA[linux]]></category>
+		<category><![CDATA[open.source]]></category>
+		<category><![CDATA[pjtrix.site]]></category>
+		<category><![CDATA[software.development]]></category>
+		<category><![CDATA[upgrades]]></category>
+		<category><![CDATA[wordpress]]></category>
+
+		<guid isPermaLink="false">http://www.pjtrix.com/blawg/?p=122</guid>
+		<description><![CDATA[So today I updated WordPress to 2.6.5. And like every other time, it was a cinch, all over and done in less than five minutes. Thanks, WordPress guys! In other news, I have been geeking out with both the iPhone &#8230; <a href="http://www.pjtrix.com/blawg/2008/11/28/obligatory-wordpress-upgrade-post-10101010-and-other-rumblings-at-chez-pj/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>So today I updated WordPress to 2.6.5. And like every other time, it was a cinch, all over and done in less than five minutes. Thanks, WordPress guys!</p>
+<p>In other news, I have been geeking out with both the iPhone SDK and the Android SDK, and I believe I have a little something special going here. I hope to have it ready for release, on both platforms, sometime in January. Development continues.</p>
+<p>I will need beta testers soon. Any T-Mobile G1 users interested in helping out, you can email me at dreadpiratepj [at] gmail [dot] com</p>
+<p>Speaking of Android, I started playing with it now that the source code to the whole thing has been released. I managed to get Android booting on a Palm TX, but it still needs a lot of work. It boots, but it doesn&#8217;t do crap once it boots. <img src="http://www.pjtrix.com/blawg/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I get all the way to the &#8220;Press the MENU key to unlock&#8221; screen, but none of the keys do anything. Neither does touching the screen. It&#8217;s an issue with the Linux kernel drivers and device configuration. It just wasn&#8217;t made to run on a Palm TX without proper tweaking of the source. I just don&#8217;t know what the proper tweaking is.</p>
+<p>I need to look in my bag of loot for a Palm serial cable (I&#8217;m sure I have one somewhere) and hopefully I can get a serial console from which to poke around inside Android.</p>
+<p>I do have Android running successfully on my Sprint Touch (my parents, my sister and I have a family plan on Sprint.) Credit for that goes to <a href="http://it029000.massey.ac.nz/vogue">Dr. Martin Johnson in New Zeland</a>. I just use his release on my phone (before you ask, no, his release doesn&#8217;t work on the Palm TX. It&#8217;s the first thing I tried. <img src="http://www.pjtrix.com/blawg/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.pjtrix.com/blawg/2008/11/28/obligatory-wordpress-upgrade-post-10101010-and-other-rumblings-at-chez-pj/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Rush Concert Photos</title>
+		<link>http://www.pjtrix.com/blawg/2008/04/12/rush-concert-photos/</link>
+		<comments>http://www.pjtrix.com/blawg/2008/04/12/rush-concert-photos/#comments</comments>
+		<pubDate>Sat, 12 Apr 2008 20:34:15 +0000</pubDate>
+		<dc:creator><![CDATA[dreadpiratepj]]></dc:creator>
+				<category><![CDATA[concerts]]></category>
+		<category><![CDATA[iphone]]></category>
+		<category><![CDATA[iphone-jailbreak]]></category>
+		<category><![CDATA[iphone-third-party-apps]]></category>
+		<category><![CDATA[photos]]></category>
+		<category><![CDATA[rush]]></category>
+
+		<guid isPermaLink="false">http://www.pjtrix.com/blawg/2008/04/12/rush-concert-photos/</guid>
+		<description><![CDATA[On Friday, April 11, 2008, I went to see Rush open their 2008 Snakes and Arrows concert tour at Coliseo de Puerto Rico, San Juan, PR. I had an awesome time with my pals Alejandro, Cesar and Kevin. We were &#8230; <a href="http://www.pjtrix.com/blawg/2008/04/12/rush-concert-photos/">Continue reading <span class="meta-nav">&#8594;</span></a>]]></description>
+				<content:encoded><![CDATA[<p>On Friday, April 11, 2008, I went to see <a href="http://www.rush.com">Rush</a> open their 2008 Snakes and Arrows concert tour at Coliseo de Puerto Rico, San Juan, PR. I had an awesome time with my pals Alejandro, Cesar and Kevin. We were seated about six rows from the stage.</p>
+<p>There were a couple of guys from the Philadelphia suburbs right next to us. Some guy from Dallas, TX was two rows ahead of us, and was stranded in PR because of the American Airlines fiasco.</p>
+<p>The concert was awesome, three hours of great live music. Truly the best live performance I&#8217;ve seen in ages. There was a six minute drum solo by <a href="http://www.neilpeart.com">Neil Peart</a>, that was just amazing.</p>
+<p>I took my iPhone to use as a camera, knowing digital cameras per se were not allowed. I used an iPhone application called <a href="http://www.snapture.org">Snapture</a>. This great little app is made for &#8220;jailbroken&#8221; iPhones. That is, iPhones that have been modified to load and run applications not &#8220;blessed&#8221; by Apple.</p>
+<p>You&#8217;ll notice that some pictures are blurry/shakey, followed by two steady, clear ones. Snapture has an optional feature where it takes three pictures within a second or so of each other. This helps you steady the phone and get at least one clear shot.</p>
+<p>I took 1426 photos. Yeah, that&#8217;s right, 1426 photos. I did this by using the 3-consecutive-shots feature of Snapture, pushing the volume button to trigger the photo capture twice per minute or so.</p>
+<p><a href="/downloads/Rush_Concert-Puerto_Rico-2008-04-11-set_1.zip">Set 1 of photos is here.</a></p>
+<p><a href="/downloads/Rush_Concert-Puerto_Rico-2008-04-11-set_2.zip">Set 2 of photos is here.</a> </p>
+<p>Each ZIP file contains 713 photos and is less than 260MB.</p>
+<p>The pictures I&#8217;m uploading are totally unprocessed. They&#8217;re right off of the iPhone at 1600&#215;1200 resolution.</p>
+<p>I started deleting blurry pictures, and pictures where the stage was too dark or too bright and lacking contrast. But there are so many pictures to go through, I eventually decided not to bother.</p>
+<p>The last 250+ pictures are in black and white. I think my finger slipped at some point, and I touched one of Snapture&#8217;s on-screen controls. Sorry about that!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.pjtrix.com/blawg/2008/04/12/rush-concert-photos/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+	</channel>
+</rss>

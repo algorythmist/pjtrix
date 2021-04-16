@@ -1,0 +1,92 @@
+body
+{
+	font-family: arial;
+	font-size: 1em;
+}
+.holder
+{
+	width: 400px;
+}
+.quiz_div
+{
+	background-color: #FFFFFF; 
+	overflow: auto; 
+	width: 400px;
+	height: auto; 
+	border: 1px solid black;
+	padding:0px; 
+	margin: 0px;
+}
+.margin
+{
+	width: 160px;
+	height: 100%;
+	float: left;
+}
+.facebook
+{
+
+}
+.pic
+{
+	height: 0px;
+	width: 0px;
+}
+H1
+{
+	font-size: 1.4em;
+}
+fieldset, legend
+{
+	margin: 1px;
+	padding: 1px;
+
+}
+.google_mobile
+{
+	display: none;
+}
+.google_top, .google_left
+{
+	 /* border: 1px solid black; */
+}
+.google_top
+{
+	margin-left: 160px;
+}
+.google_left
+{
+	width: 160px;
+}
+input[type="radio"]
+{
+	margin: 10px 15px;
+	width: 1.25em;
+	height: 1.25em;
+}
+label:hover
+{
+	background: #aaaaff;
+} 
+#buttons
+{
+	/* min-height: 7em; */
+}
+.social-div
+{
+	display: table-row;
+	vertical-align: middle;
+}
+.social-button
+{
+	padding: 10px 15px;
+	display: table-cell;
+	vertical-align: bottom;
+	transform: scale(1.15);
+	-webkit-transform: scale(1.15);
+}
+.desc
+{
+	max-width: 20em;
+}
+
