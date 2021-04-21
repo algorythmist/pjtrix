@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<title>iPhone Development on Windows &amp; Linux with open source tools | Dread Pirate PJ&#8217;s House of Hacks and Tricks</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="stylesheet" type="text/css" media="all" href="../../blawg/wp-content/themes/twentyten/style.css" />
+<link rel="pingback" href="http/blawgxmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="Dread Pirate PJ&#039;s House of Hacks and Tricks &raquo; Feed" href="../../../../../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Dread Pirate PJ&#039;s House of Hacks and Tricks &raquo; Comments Feed" href="../../../../../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Dread Pirate PJ&#039;s House of Hacks and Tricks &raquo; iPhone Development on Windows &amp; Linux with open source tools Comments Feed" href="../feed/index.html" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.pjtrix.com\/blawg\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.29"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../../xmlrpc.php%3Frsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../../../../../wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='My first book is finally a go! Woo hoo!' href='../../../../../index.html%3Fp=135.html' />
+<link rel='next' title='Blog Reboot for 2012' href='../../../../../index.html%3Fp=202.html' />
+<meta name="generator" content="WordPress 4.2.29" />
+<link rel='canonical' href='index.html#comments' />
+<link rel='shortlink' href='../../../../../index.html%3Fp=168.html' />
+
+<!-- Bad Behavior 2.2.19 run time: 3.316 ms -->
+<script type="text/javascript">
+<!--
+function bb2_addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			oldonload();
+			func();
+		}
+	}
+}
+
+bb2_addLoadEvent(function() {
+	for ( i=0; i < document.forms.length; i++ ) {
+		if (document.forms[i].method == 'post') {
+			var myElement = document.createElement('input');
+			myElement.setAttribute('type', 'hidden');
+			myElement.name = 'bb2_screener_';
+			myElement.value = '1618586208 24.55.127.190';
+			document.forms[i].appendChild(myElement);
+		}
+	}
+});
+// --></script>
+		</head>
+
+<body class="single single-post postid-168 single-format-standard">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<div id="site-title">
+					<span>
+						<a href="../../../../..///index.html" title="Dread Pirate PJ&#8217;s House of Hacks and Tricks" rel="home">Dread Pirate PJ&#8217;s House of Hacks and Tricks</a>
+					</span>
+				</div>
+				<div id="site-description"></div>
+
+										<img src="/../blawg/wp-content/themes/twentyten/images/headers/path.jpg" width="940" height="198" alt="" />
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="index.html#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu"><ul><li ><a href="../../../../..///index.html">Home</a></li><li class="page_item page-item-2"><a href="../../../../../index.html%3Fp=2.html">About</a></li><li class="page_item page-item-65"><a href="../../../../../index.html%3Fp=65.html">My writing</a></li></ul></div>
+			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="../../../../../index.html%3Fp=135.html" rel="prev"><span class="meta-nav">&larr;</span> My first book is finally a go! Woo hoo!</a></div>
+					<div class="nav-next"><a href="../../../../../index.html%3Fp=202.html" rel="next">Blog Reboot for 2012 <span class="meta-nav">&rarr;</span></a></div>
+				</div><!-- #nav-above -->
+
+				<div id="post-168" class="post-168 post type-post status-publish format-standard hentry category-iphone category-linux category-open-source category-windows tag-iphone tag-linux tag-open-source tag-oscon2009 tag-windows">
+					<h1 class="entry-title">iPhone Development on Windows &#038; Linux with open source tools</h1>
+
+					<div class="entry-meta">
+						<span class="meta-prep meta-prep-author">Posted on</span> <a href="../../../../../index.html%3Fp=168.html" title="3:10 pm" rel="bookmark"><span class="entry-date">July 21, 2009</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="../../../../../author/admin/index.html" title="View all posts by dreadpiratepj">dreadpiratepj</a></span>					</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<p>Yesterday I presented at OSCON 2009. I spoke about how to use Eclipse and the iPhone-dev team&#8217;s GCC cross-compiler to develop for iPhone on Windows &#038; Linux. I also spoke about XMLVM, an open source project that lets you develop in Java for Android and deploy on iPhone or Palm WebOS.</p>
+<p>You can download the slides and program examples <a href="../../../../../../../pjtrix.com/iphone/presentations/OSCON2009-iPhone-and-GCC.zip">here</a>.</p>
+<p>To get started with open source iPhone development, you can download the <a href="../../../../../../../pjtrix.com/iphone/presentations/OSCON2009/iphone-toolchain-linux.tgz">open source toolchain for Linux</a> or for <a href="../../../../../../../pjtrix.com/iphone/presentations/OSCON2009/iphone-toolchain-windows.tgz">Windows/Cygwin</a>.</p>
+<p><strong>Note:</strong> To use the toolchain, you need to obtain the iPhone OS headers, frameworks and libraries. You can jailbreak your device and extract the frameworks and libraries using SSH, or you can decrypt the firmware and extract the framework and libraries from the decrypted disk image. The binaries you need are /System/Library/Frameworks and /usr/lib .</p>
+<p>You can download the headers from the iPhone-dev team&#8217;s Subversion repository with <code>svn co http://iphone-dev.googlecode.com/svn/branches/include-1.2-sdk</code> </p>
+<p>To use the iPhone-dev team&#8217;s headers, you need headers for Mac OS X 10.4 SDK. Then you type this at the command line:<br />
+<code><br />
+cd /path/to/iphone-dev/svn/branches/include-1.2-sdk<br />
+./configure --with-macosx-sdk=/Developer/SDKs/MacOSX10.4u.sdk</p>
+<p>sudo bash install-headers.sh<br />
+</code></p>
+<p>Or you can extract them from the official iPhone SDK. <img src="/../../../../wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Once you get the binaries and headers, move them to /usr/local/iphone-sysroot/ . The headers go in /usr/local/iphone-sysroot/usr/include/ , frameworks go in /usr/local/iphone-sysroot/System/Library/Frameworks/ , and libraries in /usr/local/iphone-sysroot/usr/lib/ .</p>
+<p>Then to compile and link, set CFLAGS and LDFLAGS like below :<br />
+<code><br />
+export CFLAGS=-I/usr/local/lib/gcc/arm-apple-darwin9/4.2.1/include \<br />
+-isysroot /usr/local/iphone-sysroot</p>
+<p>export LDFLAGS=-framework CoreFoundation -framework Foundation \<br />
+-framework UIKit -lobjc -bind_at_load -isysroot /usr/local/iphone-sysroot<br />
+</code></p>
+<p>Then use these compile and linker commands :<br />
+<code><br />
+/usr/local/bin/arm-apple-darwin9-gcc -c $(CFLAGS) main.c HelloWorld.m</p>
+<p>/usr/local/bin/arm-apple-darwin9-gcc $(LDFLAGS) HelloWorld.o main.o \<br />
+-o HelloWorld<br />
+</code></p>
+<p>The easiest way to set this up for each project is in a makefile. Look in the HelloWorld example in the zip file with the slides for an example.</p>
+											</div><!-- .entry-content -->
+
+					<div id="entry-author-info">
+						<div id="author-avatar">
+							<img alt='' src='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=60&amp;d=mm&amp;r=pg' srcset='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=120&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-60 photo' height='60' width='60' />						</div><!-- #author-avatar -->
+						<div id="author-description">
+							<h2>About dreadpiratepj</h2>
+							I have been goofing around with computers since May 1978, when I was about seven years old. For the past decade, I've even managed to have people pay me for this! Suckers! :-)							<div id="author-link">
+								<a href="../../../../../author/admin/index.html" rel="author">
+									View all posts by dreadpiratepj <span class="meta-nav">&rarr;</span>								</a>
+							</div><!-- #author-link	-->
+						</div><!-- #author-description -->
+					</div><!-- #entry-author-info -->
+
+					<div class="entry-utility">
+						This entry was posted in <a href="../../../../../category/technology/gadgets/iphone/index.html" rel="category tag">iphone</a>, <a href="../../../../../category/computing/linux/index.html" rel="category tag">linux</a>, <a href="../../../../../category/free-culture/open-source/index.html" rel="category tag">open.source</a>, <a href="../../../../../category/computing/windows/index.html" rel="category tag">windows</a> and tagged <a href="../../../../../tag/iphone/index.html" rel="tag">iphone</a>, <a href="../../../../../tag/linux/index.html" rel="tag">linux</a>, <a href="../../../../../tag/open-source/index.html" rel="tag">open.source</a>, <a href="../../../../../tag/oscon2009/index.html" rel="tag">oscon2009</a>, <a href="../../../../../tag/windows/index.html" rel="tag">windows</a>. Bookmark the <a href="../../../../../index.html%3Fp=168.html" title="Permalink to iPhone Development on Windows &amp; Linux with open source tools" rel="bookmark">permalink</a>.											</div><!-- .entry-utility -->
+				</div><!-- #post-## -->
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="../../../../../index.html%3Fp=135.html" rel="prev"><span class="meta-nav">&larr;</span> My first book is finally a go! Woo hoo!</a></div>
+					<div class="nav-next"><a href="../../../../../index.html%3Fp=202.html" rel="next">Blog Reboot for 2012 <span class="meta-nav">&rarr;</span></a></div>
+				</div><!-- #nav-below -->
+
+				
+			<div id="comments">
+
+
+			<h3 id="comments-title">13 Responses to <em>iPhone Development on Windows &#038; Linux with open source tools</em></h3>
+
+
+			<ol class="commentlist">
+					<li class="comment even thread-even depth-1" id="li-comment-8619">
+		<div id="comment-8619">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../0.gravatar.com/avatar/fe4e7b74a5977b8fab0555c1a2a9bf70%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../0.gravatar.com/avatar/fe4e7b74a5977b8fab0555c1a2a9bf70%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn">David</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8619">
+				July 26, 2009 at 9:25 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>I stumbled upon this page and it caught my interest.  I would like to try developing for the iPhone, but I&#8217;m very new to development and I&#8217;m very new to linux, which is my new operating system that I&#8217;m going to stick with.<br />
+With that being said, I have a few questions:<br />
+Which directories do I retrieve from my iPhone? I&#8217;m assuming /System/Library/Frameworks and /usr/lib  is that correct?<br />
+Also, after running that svn command, where are the headers downloaded to and, what do I do with them from there?<br />
+Is there a special place I put the directories and headers, and is there something I need to do with them and the toolchain in order to start developing?<br />
+Sorry if my questions are &#8220;noobish&#8221;</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-8620">
+		<div id="comment-8620">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn"><a href='../../../../../../../pjtrix.com/index.html' rel='external nofollow' class='url'>dreadpiratepj</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8620">
+				July 27, 2009 at 12:35 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>David, your questions aren&#8217;t noobish at all, and even if they were, you don&#8217;t need to apologize. <img src="/../../../../wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>You are correct, the binaries you need are /System/Library/Frameworks and /usr/lib . You get these from your iPhone or iPod Touch, from a decrypted system firmware, or from the SDK.</p>
+<p>Once you get the binaries and headers, you can copy them to /usr/local/iphone-sysroot/ . Then to compile and link, set CFLAGS and LDFLAGS like below :</p>
+<p>export CFLAGS=-I/usr/local/lib/gcc/arm-apple-darwin9/4.2.1/include -isysroot /usr/local/iphone-sysroot</p>
+<p>export LDFLAGS=-framework CoreFoundation -framework Foundation -framework UIKit -lobjc -bind_at_load -isysroot /usr/local/iphone-sysroot</p>
+<p>Each export command goes in one long command line, even if it looks like two lines, e.g. export CFLAGS is one line, export LDFLAGS is another separate line.</p>
+<p>Then use these compile and linker commands :</p>
+<p>/usr/local/bin/arm-apple-darwin9-gcc -c $(CFLAGS) main.c HelloWorld.m<br />
+/usr/local/bin/arm-apple-darwin9-gcc $(LDFLAGS) HelloWorld.o main.o -o HelloWorld</p>
+<p>The easiest way to set this up is in a makefile, as in the HelloWorld example in the zip file with the slides.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-8622">
+		<div id="comment-8622">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../2.gravatar.com/avatar/20fd5f7947098a1a3b20e291ba656430%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../2.gravatar.com/avatar/20fd5f7947098a1a3b20e291ba656430%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn">Lucas</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8622">
+				July 31, 2009 at 1:50 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>Hi</p>
+<p>When I unpack the toolchain tgz for windows<br />
+I notice that arm-apple-darwin9-g++.exe is zero bytes.<br />
+I guess it is a link to some other file but which?</p>
+<p>/Thanks</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-8623">
+		<div id="comment-8623">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn"><a href='../../../../../../../pjtrix.com/index.html' rel='external nofollow' class='url'>dreadpiratepj</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8623">
+				July 31, 2009 at 2:02 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>Hi Lucas,</p>
+<p>What did you use to unpack the toolchain on Windows? I&#8217;m afraid WinZip and WinRAR don&#8217;t support symlinks. Try from the cygwin command line:</p>
+<p>cd /</p>
+<p>tar xzf /path/to/toolchain.tgz</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-8624">
+		<div id="comment-8624">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../2.gravatar.com/avatar/bf282e664ef7cd1d1f738e7d601fd2c8%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../2.gravatar.com/avatar/bf282e664ef7cd1d1f738e7d601fd2c8%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn">Luis</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8624">
+				July 31, 2009 at 5:13 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>Great info!!! Thanks!!!</p>
+<p>I&#8217;ve downloaded everything and gave &#8216;make&#8217; a try (on a linux (Ubuntu) sstem).   I got the include files from the iPhone-dev team SVN repository, but it seems that there are some files missing (or at least not corresponding to your sample code). </p>
+<p>Here are the first few compilation errors:</p>
+<p> /usr/local/bin/arm-apple-darwin9-gcc -c -I/usr/local/lib/gcc/arm-apple-darwin9/4.2.1/include -isysroot /usr/local/iphone-sysroot  HelloWorld.m -o HelloWorld.o<br />
+  HelloWorld.m:9:34: error: Foundation/Foundation.h: No such file or directory<br />
+  In file included from HelloWorld.m:10:<br />
+  /usr/local/iphone-sysroot/usr/include/UIKit/UIKit.h:3:38: error: CoreGraphics/CoreGraphics.h: No such file or directory<br />
+  /usr/local/iphone-sysroot/usr/include/UIKit/UIKit.h:4:42: error: CoreFoundation/CoreFoundation.h: No such file or directory         </p>
+<p>I don&#8217;t have a Foundation directory in iphone-sysroot/usr/include,  nor a CoreGraphics.</p>
+<p>I suppose I should try getting the includes from the SDK directly?</p>
+<p>Thanks for all this!!!<br />
+Luis.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-8625">
+		<div id="comment-8625">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn"><a href='../../../../../../../pjtrix.com/index.html' rel='external nofollow' class='url'>dreadpiratepj</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8625">
+				July 31, 2009 at 6:15 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>Hello Luis, thanks for stopping by!</p>
+<p>It seems I forgot a step in using the iPhone-dev team&#8217;s header files. You need to provide the location to the Mac OS X 10.4 SDK (the 10.4 SDK that comes with plain XCode 3.1 should be fine). I&#8217;ve amended the blog post with the details.</p>
+<p>On the other hard, if you&#8217;re going to go through the trouble of obtaining 10.4 SDK files, you may as well just get the official SDK files.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-8626">
+		<div id="comment-8626">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../2.gravatar.com/avatar/bf282e664ef7cd1d1f738e7d601fd2c8%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../2.gravatar.com/avatar/bf282e664ef7cd1d1f738e7d601fd2c8%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn">Luis</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8626">
+				July 31, 2009 at 9:22 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>Managed to get the Mac OX X 10.4 SDK installed using the iPhone-dev instructions plus your ./configure &amp; sudo steps. </p>
+<p>However, that placed all the relevant headers in /usr/local/arm-apple-darwin/include instead of /usr/local/iphone-sysroot/usr/include</p>
+<p>So I copied ..darwin/include/* to iphone-sysroot/usr/include</p>
+<p>Now your HelloWorldiPhone example has a lot less compile errors, but I still get:</p>
+<p>HelloWorld.m:15: error: too many arguments to function &#8216;UIApplicationMain&#8217;</p>
+<p>I wonder if your toolchain download and the iPhone-dev team&#8217;s header files are incompatible?</p>
+<p>thanks again!<br />
+L.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-8627">
+		<div id="comment-8627">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../0.gravatar.com/avatar/cc728482bfff1c637f4fa7bffd77f8f3%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../0.gravatar.com/avatar/cc728482bfff1c637f4fa7bffd77f8f3%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn">Jason</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8627">
+				August 1, 2009 at 9:47 am</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>Hi, when linking this page I don&#8217;t have much interest. but after reading it, i find it useful.<br />
+and looking at the publishing date 2009-7<br />
+oh, i have to ask a question. will this work for IPHONE3.0?<br />
+i really need a workable toolchain for 3.0</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-8628">
+		<div id="comment-8628">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn"><a href='../../../../../../../pjtrix.com/index.html' rel='external nofollow' class='url'>dreadpiratepj</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8628">
+				August 1, 2009 at 2:45 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>Hi Luis,</p>
+<p>Try the 1.2 SDK headers.</p>
+<p>svn co <a href="http://iphone-dev.googlecode.com/svn/branches/include-1.2-sdk" rel="nofollow">http://iphone-dev.googlecode.com/svn/branches/include-1.2-sdk</a></p>
+<p>Sorry for the confusion. It&#8217;s been a while since I wrote that HelloWorld example. Notice in the comment header that it&#8217;s dated August 2008.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-8629">
+		<div id="comment-8629">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn"><a href='../../../../../../../pjtrix.com/index.html' rel='external nofollow' class='url'>dreadpiratepj</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8629">
+				August 1, 2009 at 3:30 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>Jason, I had someone write to me in the last few days that the toolchain does not work with 3.0. I&#8217;m looking into it but don&#8217;t have a timeframe. Will get to it when I can. My hunch is that 3.0 uses GCC 4.2 and this toolchain is GCC 4.0, but it&#8217;s just a hunch.</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-8630">
+		<div id="comment-8630">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../0.gravatar.com/avatar/cc728482bfff1c637f4fa7bffd77f8f3%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../0.gravatar.com/avatar/cc728482bfff1c637f4fa7bffd77f8f3%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn">jason</cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8630">
+				August 1, 2009 at 11:48 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>I have tried hard to use gcc4.2 to build the toolchain, and i did follow the instruction of saurik <a href="http://www.saurik.com/id/4" rel="nofollow">http://www.saurik.com/id/4</a></p>
+<p>but, unfortunately i failed. Contacting with saurik, he just told me that the toolchain will work, but don&#8217;t tell me how to make it work. i feel sad, and i am really disappointed because he didn reply my Email anymore</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-8631">
+		<div id="comment-8631">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../2.gravatar.com/avatar/e0674ad1b1e719dd385362948914782c%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../2.gravatar.com/avatar/e0674ad1b1e719dd385362948914782c%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn"><a href='http://petebones.com' rel='external nofollow' class='url'>Pete Bones</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8631">
+				August 3, 2009 at 11:19 am</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>I&#8217;ve been toying with the idea of trying out iPhone dev for a while now, and my question is this:</p>
+<p>if I start a project using the open source SDk, how easy is it to transfer it to the official SDK, should I decide to do so? Thanks!</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-8632">
+		<div id="comment-8632">
+			<div class="comment-author vcard">
+				<img alt='' src='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=40&amp;d=mm&amp;r=pg' srcset='../../../../../../../1.gravatar.com/avatar/1d55b341360e6454fe63f913bddcdb0f%3Fs=80&amp;d=mm&amp;r=pgamp;r=pg 2x' class='avatar avatar-40 photo' height='40' width='40' />				<cite class="fn"><a href='../../../../../../../pjtrix.com/index.html' rel='external nofollow' class='url'>dreadpiratepj</a></cite> <span class="says">says:</span>			</div><!-- .comment-author .vcard -->
+			
+			<div class="comment-meta commentmetadata"><a href="index.html#comment-8632">
+				August 3, 2009 at 1:52 pm</a>			</div><!-- .comment-meta .commentmetadata -->
+
+			<div class="comment-body"><p>Hi Pete,</p>
+<p>The code you write to program with the open source toolchain is exactly the same as with the official SDK, as long as you use the SDK  headers, frameworks and libraries. You should be able to get started with a Windows or Linux computer and a jailbroken device.</p>
+<p>I&#8217;ll argue that going this route will make you a better iPhone developer, because you&#8217;ll learn how to program your UI from scratch, instead of being spoiled by Interface Builder. 😉</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+		</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+			</ol>
+
+
+			<p class="nocomments">Comments are closed.</p>
+	
+
+
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+
+
+			<li id="search" class="widget-container widget_search">
+				<form role="search" method="get" id="searchform" class="searchform" action="../../../../..///index.html">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Search" />
+				</div>
+			</form>			</li>
+
+			<li id="archives" class="widget-container">
+				<h3 class="widget-title">Archives</h3>
+				<ul>
+						<li><a href='../../../../../2014/08/index.html'>August 2014</a></li>
+	<li><a href='../../../../../2012/07/index.html'>July 2012</a></li>
+	<li><a href='../../../index.html'>July 2009</a></li>
+	<li><a href='../../../../06/index.html'>June 2009</a></li>
+	<li><a href='../../../../../2008/11/index.html'>November 2008</a></li>
+	<li><a href='../../../../../2008/10/index.html'>October 2008</a></li>
+	<li><a href='../../../../../2008/08/index.html'>August 2008</a></li>
+	<li><a href='../../../../../2008/05/index.html'>May 2008</a></li>
+	<li><a href='../../../../../2008/04/index.html'>April 2008</a></li>
+	<li><a href='../../../../../2008/03/index.html'>March 2008</a></li>
+	<li><a href='../../../../../2008/02/index.html'>February 2008</a></li>
+	<li><a href='../../../../../2008/01/index.html'>January 2008</a></li>
+	<li><a href='../../../../../2007/05/index.html'>May 2007</a></li>
+	<li><a href='../../../../../2007/04/index.html'>April 2007</a></li>
+	<li><a href='../../../../../2007/03/index.html'>March 2007</a></li>
+	<li><a href='../../../../../2007/02/index.html'>February 2007</a></li>
+	<li><a href='../../../../../2007/01/index.html'>January 2007</a></li>
+	<li><a href='../../../../../2006/12/index.html'>December 2006</a></li>
+	<li><a href='../../../../../2006/11/index.html'>November 2006</a></li>
+	<li><a href='../../../../../2006/10/index.html'>October 2006</a></li>
+	<li><a href='../../../../../2006/09/index.html'>September 2006</a></li>
+	<li><a href='../../../../../2006/08/index.html'>August 2006</a></li>
+	<li><a href='../../../../../2006/07/index.html'>July 2006</a></li>
+	<li><a href='../../../../../2006/06/index.html'>June 2006</a></li>
+	<li><a href='../../../../../2006/05/index.html'>May 2006</a></li>
+	<li><a href='../../../../../2006/04/index.html'>April 2006</a></li>
+	<li><a href='../../../../../2006/03/index.html'>March 2006</a></li>
+	<li><a href='../../../../../2006/02/index.html'>February 2006</a></li>
+	<li><a href='../../../../../2006/01/index.html'>January 2006</a></li>
+				</ul>
+			</li>
+
+			<li id="meta" class="widget-container">
+				<h3 class="widget-title">Meta</h3>
+				<ul>
+										<li><a href="#">Log in</a></li>
+									</ul>
+			</li>
+
+					</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="../../../../..///index.html" title="Dread Pirate PJ&#8217;s House of Hacks and Tricks" rel="home">
+					Dread Pirate PJ&#8217;s House of Hacks and Tricks				</a>
+			</div><!-- #site-info -->
+
+			<div id="site-generator">
+								<a href="https://wordpress.org/" title="Semantic Personal Publishing Platform">Proudly powered by WordPress.</a>
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+</body>
+</html>
